@@ -1,3 +1,4 @@
+import os
 import discord
 from discord.ext import commands
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -31,4 +32,4 @@ async def send_scheduled_message():
     await channel.send(embeds=[embed])
 
 
-bot.run('MTIxNzA2NjUzODA5NjM5NDI5MA.GsL8al.W440mXuONTeFj0RE6m7fADa2kTDLI3n9s6wibw')  # Замените YOUR_BOT_TOKEN на токен вашего бота
+bot.run(os.getenv('DISCORD_BOT_TOKEN'))
