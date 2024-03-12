@@ -3,7 +3,7 @@ name: Run Python Script on Schedule
 on:
   schedule:
     # Запуск каждый вторник в 22:10 по Московскому времени (пример cron: минуты часы день месяц день недели)
-    - cron: '40 20 * * 2'
+    - cron: '44 20 * * 2'
 
 jobs:
   run-script:
