@@ -2,7 +2,7 @@ name: Run Python Script on Schedule
 
 on:
   schedule:
-    - cron: '23 21 * * 2'
+    - cron: '24 21 * * 2'
 
 jobs:
   run-script:
@@ -18,6 +18,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run the script
-      run: python path/to/your_script.py
+      run: python testBot.py
       env:
         DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
