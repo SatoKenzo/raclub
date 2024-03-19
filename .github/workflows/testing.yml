@@ -1,0 +1,29 @@
+name: Discord Bot Workflow
+
+on:
+  push:
+    branches: [ main ]  # Запуск workflow при каждом push в ветку main
+  schedule:
+    - cron: '0 * * * *'  # Запуск каждый час; измените на нужное расписание
+
+jobs:
+  run-discord-bot:
+    runs-on: ubuntu-latest  # Выбор окружения для запуска
+
+    steps:
+    - uses: actions/checkout@v3  # Получение последней версии вашего кода из репозитория
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4  # Установка Python
+      with:
+        python-version: '3.10'  # Указание версии Python
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip  # Обновление pip
+        pip install discord.py  # Установка discord.py и любых других зависимостей
+
+    - name: Run the script
+      run: python testing.py  # Запуск вашего скрипта
+      env:
+        DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}  # Использование токена из секретов
