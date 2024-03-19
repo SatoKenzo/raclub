@@ -1,4 +1,4 @@
 discord.py
 apscheduler
 pytz
-py-cord
+py-cord==1.7.3
