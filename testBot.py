@@ -17,7 +17,7 @@ async def on_ready():
     print(f'{bot.user} has connected to Discord!')
     scheduler = AsyncIOScheduler()
     scheduler.configure(timezone=pytz.timezone('Europe/Moscow'))
-    scheduler.add_job(send_scheduled_message, 'cron', day_of_week='tue', hour=17, minute=56)
+    scheduler.add_job(send_scheduled_message, 'cron', day_of_week='tue', hour=18, minute=13)
     scheduler.start()
 
 async def send_scheduled_message():
